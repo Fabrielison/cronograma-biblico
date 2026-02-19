@@ -85,6 +85,7 @@ header {
         </div>
 </main>
 <script>
+    
     // 1. Organizamos os dados (Exemplo com Janeiro e Fevereiro)
     const dadosCronograma = {
         "Janeiro": ["Gênesis 1–3", "Gênesis 4–7", "Gênesis 8–11", "Gênesis 12–15", "Gênesis 16–18", "Gênesis 19–20", "Gênesis 21–23", "Gênesis 24–25", "Gênesis 26–28", "Gênesis 29–30", "Gênesis 31–32", "Gênesis 33–35", "Gênesis 36–38", "Gênesis 39–41", "Gênesis 42–44", "Gênesis 45–47", "Gênesis 48–50", "Êxodo 1–2", "Êxodo 3–5", "Êxodo 6–9", "Êxodo 10–12", "Êxodo 13–15", "Êxodo 16–18", "Êxodo 19–21", "Êxodo 22–24", "Êxodo 25–27", "Êxodo 28–29", "Êxodo 30–31", "Êxodo 32–34", "Êxodo 35–37", "Êxodo 38–40"],
@@ -99,7 +100,31 @@ header {
       "Outubro": ["Zacarias 11–14", "Malaquias 1–4", "Mateus 1–4", "Mateus 5–7", "Mateus 8–9", "Mateus 10–12", "Mateus 13–14", "Mateus 15–17", "Mateus 18–20", "Mateus 21–22", "Mateus 23–24", "Mateus 25–26", "Mateus 27–28", "Marcos 1–3", "Marcos 4–5", "Marcos 6–7", "Marcos 8–9", "Marcos 10–11", "Marcos 12–13", "Marcos 14–16", "Lucas 1", "Lucas 2–3", "Lucas 4–5", "Lucas 6–7", "Lucas 8", "Lucas 9", "Lucas 10–11", "Lucas 12–13", "Lucas 14–16", "Lucas 17–18", "Lucas 19–20"],
       "Novembro": ["Lucas 21–22", "Lucas 23–24", "João 1–3", "João 4–5", "João 6–7", "João 8–9", "João 10–11", "João 12–13", "João 14–16", "João 17–18", "João 19–21", "Atos 1–4", "Atos 5–7", "Atos 8–9", "Atos 10–11", "Atos 12–13", "Atos 14–15", "Atos 16–18", "Atos 19–20", "Atos 21–23", "Atos 24–26", "Atos 27–28", "Romanos 1–3", "Romanos 4–7", "Romanos 8–11", "Romanos 12–14", "Romanos 15–16", "1 Coríntios 1–4", "1 Coríntios 5–8", "1 Coríntios 9–11"],
       "Dezembro": ["1 Coríntios 12–14", "1 Coríntios 15–16", "2 Coríntios 1–3", "2 Coríntios 4–7", "2 Coríntios 8–13", "Gálatas 1–6", "Efésios 1–3", "Efésios 4–6", "Filipenses 1–4", "Colossenses 1–4", "1 Tessalonicenses 1–5", "2 Tessalonicenses 1–3", "1 Timóteo 1–4", "1 Timóteo 5–6", "2 Timóteo 1–4", "Tito; Filemom", "Hebreus 1–4", "Hebreus 5–9", "Hebreus 10–11", "Hebreus 12–13", "Tiago 1–5", "1 Pedro 1–5", "2 Pedro 1–3", "1 João 1–5", "2 João; 3 João; Judas", "Apocalipse 1–5", "Apocalipse 6–9", "Apocalipse 10–12", "Apocalipse 13–16", "Apocalipse 17–19", "Apocalipse 20–22"]
+// Dentro do seu loop de geração:
+`<input type="checkbox" id="${mes}-${index + 1}" onchange="salvar(this.id, this.checked)">`
+        // 1. Função que guarda a marcação sempre que o utilizador clica
+function salvar(id, valor) {
+    localStorage.setItem(id, valor);
+}
 
+// 2. Função que lê o que está guardado e marca as caixinhas ao abrir o site
+function carregarProgresso() {
+    // Procuramos todas as caixinhas no site
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    
+    checkboxes.forEach(cb => {
+        // Verificamos se existe algo guardado para o ID desta caixinha
+        const estadoSalvo = localStorage.getItem(cb.id);
+        
+        // Se estiver guardado como 'true', marcamos a caixinha
+        if (estadoSalvo === 'true') {
+            cb.checked = true;
+        }
+    });
+}
+
+// 3. Executamos a função de carregar assim que o site abre
+window.onload = carregarProgresso;
     };
 
     const container = document.getElementById('calendario');
@@ -136,3 +161,4 @@ header {
 
 </body>
 </html>
+
