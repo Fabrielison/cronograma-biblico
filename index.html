@@ -1,164 +1,209 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo de Leitura IBR 2026</title>
+    <title>Plano Anual de Leitura Bíblica</title>
     <style>
- body {
-    background-color: #f4eee1; /* Cor de fundo creme do PDF */
-    color: #3e1e1e; /* Tom de castanho escuro para o texto */
-    font-family: 'Georgia', serif; /* Fonte clássica e séria */
-}
+        /* DESIGN INSPIRADO NO DOCUMENTO PDF */
+        body {
+            background-color: #f4eee1; /* Cor creme/papel do PDF */
+            color: #3e1e1e; /* Marrom escuro para texto */
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-header {
-    border-bottom: 2px solid #8b0000; /* Linha decorativa vinho */
-    margin-bottom: 40px;
-    padding: 20px;
-}
+        header {
+            text-align: center;
+            border-bottom: 3px double #8b0000; /* Linha dupla bordô */
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
 
-h1 {
-    font-family: 'Times New Roman', serif;
-    font-size: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: #5a0000;
-}
+        h1 {
+            font-size: 2.5rem;
+            color: #5a0000;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-.cronograma-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    padding: 20px;
-}
+        .subtitulo {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: #3e1e1e;
+        }
 
-.mes-coluna {
-    background: #fffdf9; /* Fundo ligeiramente mais claro para as tabelas */
-    border: 1px solid #dcd1b3;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.05); /* Sombra suave */
-    padding: 25px;
-    min-width: 320px;
-}
+        /* LAYOUT DAS COLUNAS (FLEXBOX) */
+        .cronograma-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            max-width: 1400px;
+        }
 
-.tabela-leitura th {
-    background-color: #5a0000; /* Fundo vinho para o cabeçalho */
-    color: white;
-    text-transform: uppercase;
-    font-size: 0.8em;
-}
+        .mes-coluna {
+            background: #fffdf9;
+            border: 1px solid #dcd1b3;
+            padding: 15px;
+            width: 320px;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
 
-.tabela-leitura td {
-    border-bottom: 1px solid #eee;
-    padding: 12px 8px;
-}
+        h2 {
+            color: #8b0000;
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 5px;
+            text-align: center;
+            margin-top: 0;
+            font-family: 'Times New Roman', serif;
+        }
 
-/* Estilo para a checkbox personalizada */
-input[type="checkbox"] {
-    cursor: pointer;
-    accent-color: #5a0000;
-}
+        /* ESTILO DA TABELA */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
 
-footer {
-    text-align: center; /* Esta é a forma correta de centralizar texto e elementos inline */
-    margin-top: 50px;
-    padding: 20px;
-}
+        th {
+            background-color: #5a0000;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
 
-header {
-    text-align: center;
-    padding: 20px 0; /* Adiciona um espaço acima e abaixo para respirar */
-    background-color: #f4eee1; [cite_start]/* Cor de fundo para combinar com o PDF [cite: 125, 126] */
-}
+        td {
+            padding: 8px 4px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f4e8; /* Efeito zebra sutil */
+        }
+
+        /* CHECKBOX ESTILIZADA */
+        input[type="checkbox"] {
+            accent-color: #8b0000;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #dcd1b3;
+            width: 100%;
+        }
+
+        /* RESPONSIVIDADE PARA CELULARES */
+        @media (max-width: 600px) {
+            .mes-coluna {
+                width: 90%;
+            }
+            h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Plano de Leitura Bíblica IBR</h1>
-        <h2>2026</h2>
-        <p>Acompanhe a sua jornada de leitura através da Bíblia em 365 dias.</p>
+        <h1>Plano de Leitura <span style="font-style: italic; text-transform: lowercase;">bíblica</span></h1>
+        <p class="subtitulo">Plano Anual Organizado - 2026</p> [cite: 4, 11, 19, 49, 62, 68, 75, 83, 89, 96, 104, 112, 121, 129]
     </header>
 
     <main>
-   <div class="cronograma-container" id="calendario">
-        </div>
-</main>
-<script>
-    
-    // 1. Organizamos os dados (Exemplo com Janeiro e Fevereiro)
-    const dadosCronograma = {
-        "Janeiro": ["Gênesis 1–3", "Gênesis 4–7", "Gênesis 8–11", "Gênesis 12–15", "Gênesis 16–18", "Gênesis 19–20", "Gênesis 21–23", "Gênesis 24–25", "Gênesis 26–28", "Gênesis 29–30", "Gênesis 31–32", "Gênesis 33–35", "Gênesis 36–38", "Gênesis 39–41", "Gênesis 42–44", "Gênesis 45–47", "Gênesis 48–50", "Êxodo 1–2", "Êxodo 3–5", "Êxodo 6–9", "Êxodo 10–12", "Êxodo 13–15", "Êxodo 16–18", "Êxodo 19–21", "Êxodo 22–24", "Êxodo 25–27", "Êxodo 28–29", "Êxodo 30–31", "Êxodo 32–34", "Êxodo 35–37", "Êxodo 38–40"],
-      "Fevereiro": ["Levítico 1–4", "Levítico 5–7", "Levítico 8–9", "Levítico 10–12", "Levítico 13", "Levítico 14–15", "Levítico 16–18", "Levítico 19–21", "Levítico 22–23", "Levítico 24–25", "Levítico 26–27", "Números 1–2", "Números 3–4", "Números 5–6", "Números 7", "Números 8–10", "Números 11–13", "Números 14", "Números 15–17", "Números 18–21", "Números 22–24", "Números 25–26", "Números 27–29", "Números 30–31", "Números 32–33", "Números 34–36", "Deuteronômio 1–2", "Deuteronômio 3–4"],
-      "Março": ["Deuteronômio 5–7", "Deuteronômio 8–10", "Deuteronômio 11–13", "Deuteronômio 14–17", "Deuteronômio 18–20", "Deuteronômio 21–23", "Deuteronômio 24–26", "Deuteronômio 27–28", "Deuteronômio 29–31", "Deuteronômio 32–34", "Josué 1", "Josué 5–7", "Josué 8–9", "Josué 10–11", "Josué 12–14", "Josué 15–17", "Josué 18–20", "Josué 21–22", "Josué 23–24", "Juízes 1–3", "Juízes 4–5", "Juízes 6–8", "Juízes 9–10", "Juízes 11–12", "Juízes 13–15", "Juízes 16–18", "Juízes 19–21", "Rute 1–4", "1 Samuel 1–3", "1 Samuel 4–7", "1 Samuel 8–10"],
-      "Abril": ["1 Samuel 11–13", "1 Samuel 14–15", "1 Samuel 16–17", "1 Samuel 18–20", "1 Samuel 21–24", "1 Samuel 25–27", "1 Samuel 28–31", "2 Samuel 1–3", "2 Samuel 4–7", "2 Samuel 8–11", "2 Samuel 12–13", "2 Samuel 14–15", "2 Samuel 16–17", "2 Samuel 18–19", "2 Samuel 20–22", "2 Samuel 23–24", "1 Reis 1", "1 Reis 2–3", "1 Reis 4–6", "1 Reis 7", "1 Reis 8", "1 Reis 9–10", "1 Reis 11–12", "1 Reis 13–14", "1 Reis 15–16", "1 Reis 17–19", "1 Reis 20–22", "2 Reis 1–2", "2 Reis 3–4", "2 Reis 5–7"],
-      "Maio": ["2 Reis 8–9", "2 Reis 10–12", "2 Reis 13–14", "2 Reis 15–16", "2 Reis 17–18", "2 Reis 19–21", "2 Reis 22–25", "1 Crônicas 1–2", "1 Crônicas 3–4", "1 Crônicas 5–6", "1 Crônicas 7–9", "1 Crônicas 10–12", "1 Crônicas 13–16", "1 Crônicas 17–19", "1 Crônicas 20–23", "1 Crônicas 24–26", "1 Crônicas 27–29", "2 Crônicas 1–4", "2 Crônicas 5–7", "2 Crônicas 8–10", "2 Crônicas 11–14", "2 Crônicas 15–18", "2 Crônicas 19–22", "2 Crônicas 23–25", "2 Crônicas 26–28", "2 Crônicas 29–30", "2 Crônicas 31–33", "2 Crônicas 34–36", "Esdras 1–2", "Esdras 3–5", "Esdras 6–8"],
-      "Junho": ["Esdras 9–10", "Neemias 1–3", "Neemias 4–6", "Neemias 7–8", "Neemias 9–10", "Neemias 11–13", "Ester 1–3", "Ester 4–7", "Ester 8–10", "Jó 1–5", "Jó 6–10", "Jó 11–15", "Jó 16–21", "Jó 22–28", "Jó 29–33", "Jó 34–37", "Jó 38–42", "Salmos 1–9", "Salmos 10–17", "Salmos 18–22", "Salmos 23–31", "Salmos 32–37", "Salmos 38–44", "Salmos 45–51", "Salmos 52–59", "Salmos 60–67", "Salmos 68–71", "Salmos 72–77", "Salmos 78–81", "Salmos 82–89"],
-      "Julho": ["Salmos 90–91", "Salmos 98–104", "Salmos 105–107", "Salmos 108–116", "Salmos 117–119:72", "Salmos 119:73–176", "Salmos 120–134", "Salmos 135–142", "Salmos 143–150", "Provérbios 1–4", "Provérbios 5–8", "Provérbios 9–13", "Provérbios 14–17", "Provérbios 18–21", "Provérbios 22–24", "Provérbios 25–28", "Provérbios 29–31", "Eclesiastes 1–6", "Eclesiastes 7–12", "Cantares 1–8", "Isaías 1–4", "Isaías 5–8", "Isaías 9–12", "Isaías 13–16", "Isaías 17–21", "Isaías 22–25", "Isaías 26–28", "Isaías 29–31", "Isaías 32–35", "Isaías 36–39", "Isaías 40–42"],
-      "Agosto": ["Isaías 43–47", "Isaías 48–51", "Isaías 52–56", "Isaías 57–59", "Isaías 60–63", "Isaías 64–66", "Jeremias 1–3", "Jeremias 4–6", "Jeremias 7–9", "Jeremias 10–12", "Jeremias 13–15", "Jeremias 16–18", "Jeremias 19–22", "Jeremias 23–25", "Jeremias 26–28", "Jeremias 29–30", "Jeremias 31–32", "Jeremias 33–35", "Jeremias 36–38", "Jeremias 39–41", "Jeremias 42–44", "Jeremias 45–48", "Jeremias 49–50", "Jeremias 51–52", "Lamentações 1–2", "Lamentações 3–5", "Ezequiel 1–4", "Ezequiel 5–8", "Ezequiel 9–12", "Ezequiel 13–15", "Ezequiel 16"],
-      "Setembro": ["Ezequiel 17–19", "Ezequiel 20–21", "Ezequiel 22–23", "Ezequiel 24–26", "Ezequiel 27–28", "Ezequiel 29–31", "Ezequiel 32–33", "Ezequiel 34–36", "Ezequiel 37–38", "Ezequiel 39–40", "Ezequiel 41–43", "Ezequiel 44–45", "Ezequiel 46–48", "Daniel 1–2", "Daniel 3–4", "Daniel 5–6", "Daniel 7–8", "Daniel 9–10", "Daniel 11–12", "Oseias 1–6", "Oseias 7–12", "Oseias 13–14; Joel 1–3", "Amós 1–5", "Amós 6–9; Obadias 1", "Jonas 1–4", "Miqueias 1–7", "Naum 1–3; Habacuque 1–3", "Sofonias 1–3; Ageu 1–2", "Zacarias 1–6", "Zacarias 7–10"],
-      "Outubro": ["Zacarias 11–14", "Malaquias 1–4", "Mateus 1–4", "Mateus 5–7", "Mateus 8–9", "Mateus 10–12", "Mateus 13–14", "Mateus 15–17", "Mateus 18–20", "Mateus 21–22", "Mateus 23–24", "Mateus 25–26", "Mateus 27–28", "Marcos 1–3", "Marcos 4–5", "Marcos 6–7", "Marcos 8–9", "Marcos 10–11", "Marcos 12–13", "Marcos 14–16", "Lucas 1", "Lucas 2–3", "Lucas 4–5", "Lucas 6–7", "Lucas 8", "Lucas 9", "Lucas 10–11", "Lucas 12–13", "Lucas 14–16", "Lucas 17–18", "Lucas 19–20"],
-      "Novembro": ["Lucas 21–22", "Lucas 23–24", "João 1–3", "João 4–5", "João 6–7", "João 8–9", "João 10–11", "João 12–13", "João 14–16", "João 17–18", "João 19–21", "Atos 1–4", "Atos 5–7", "Atos 8–9", "Atos 10–11", "Atos 12–13", "Atos 14–15", "Atos 16–18", "Atos 19–20", "Atos 21–23", "Atos 24–26", "Atos 27–28", "Romanos 1–3", "Romanos 4–7", "Romanos 8–11", "Romanos 12–14", "Romanos 15–16", "1 Coríntios 1–4", "1 Coríntios 5–8", "1 Coríntios 9–11"],
-      "Dezembro": ["1 Coríntios 12–14", "1 Coríntios 15–16", "2 Coríntios 1–3", "2 Coríntios 4–7", "2 Coríntios 8–13", "Gálatas 1–6", "Efésios 1–3", "Efésios 4–6", "Filipenses 1–4", "Colossenses 1–4", "1 Tessalonicenses 1–5", "2 Tessalonicenses 1–3", "1 Timóteo 1–4", "1 Timóteo 5–6", "2 Timóteo 1–4", "Tito; Filemom", "Hebreus 1–4", "Hebreus 5–9", "Hebreus 10–11", "Hebreus 12–13", "Tiago 1–5", "1 Pedro 1–5", "2 Pedro 1–3", "1 João 1–5", "2 João; 3 João; Judas", "Apocalipse 1–5", "Apocalipse 6–9", "Apocalipse 10–12", "Apocalipse 13–16", "Apocalipse 17–19", "Apocalipse 20–22"]
-// Dentro do seu loop de geração:
-`<input type="checkbox" id="${mes}-${index + 1}" onchange="salvar(this.id, this.checked)">`
-        // 1. Função que guarda a marcação sempre que o utilizador clica
-function salvar(id, valor) {
-    localStorage.setItem(id, valor);
-}
-
-// 2. Função que lê o que está guardado e marca as caixinhas ao abrir o site
-function carregarProgresso() {
-    // Procuramos todas as caixinhas no site
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    
-    checkboxes.forEach(cb => {
-        // Verificamos se existe algo guardado para o ID desta caixinha
-        const estadoSalvo = localStorage.getItem(cb.id);
-        
-        // Se estiver guardado como 'true', marcamos a caixinha
-        if (estadoSalvo === 'true') {
-            cb.checked = true;
-        }
-    });
-}
-
-// 3. Executamos a função de carregar assim que o site abre
-window.onload = carregarProgresso;
-    };
-
-    const container = document.getElementById('calendario');
-
-    // 2. Criamos a função que desenha a tabela
-    for (const mes in dadosCronograma) {
-        let htmlMes = `
-            <section class="mes-coluna">
-                <h2>${mes}</h2>
-                <table class="tabela-leitura">
-                    <thead>
-                        <tr><th>Dia</th><th>Passagem</th><th>Lido</th></tr>
-                    </thead>
-                    <tbody>`;
-
-        // O Ciclo que cria as linhas
-        dadosCronograma[mes].forEach((leitura, index) => {
-            htmlMes += `
-                <tr>
-                    <td>${index + 1}</td>
-                    <td>${leitura}</td>
-                    <td><input type="checkbox"></td>
-                </tr>`;
-        });
-
-        htmlMes += `</tbody></table></section>`;
-        container.innerHTML += htmlMes;
-    }
-</script>
+        <div class="cronograma-container" id="calendario">
+            </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 - Grupo de Leitura- IBR</p>
+        <p>&copy; 2026 - Organizado para leitura fiel diária</p> 
     </footer>
 
+    <script>
+        // DADOS DO CRONOGRAMA (SUA LISTA PERSONALIZADA)
+        const dadosCronograma = {
+            "Janeiro": ["Gênesis 1–3", "Gênesis 4–7", "Gênesis 8–11", "Gênesis 12–15", "Gênesis 16–18", "Gênesis 19–20", "Gênesis 21–23", "Gênesis 24–25", "Gênesis 26–28", "Gênesis 29–30", "Gênesis 31–32", "Gênesis 33–35", "Gênesis 36–38", "Gênesis 39–41", "Gênesis 42–44", "Gênesis 45–47", "Gênesis 48–50", "Êxodo 1–2", "Êxodo 3–5", "Êxodo 6–9", "Êxodo 10–12", "Êxodo 13–15", "Êxodo 16–18", "Êxodo 19–21", "Êxodo 22–24", "Êxodo 25–27", "Êxodo 28–29", "Êxodo 30–31", "Êxodo 32–34", "Êxodo 35–37", "Êxodo 38–40"],
+            "Fevereiro": ["Levítico 1–4", "Levítico 5–7", "Levítico 8–9", "Levítico 10–12", "Levítico 13", "Levítico 14–15", "Levítico 16–18", "Levítico 19–21", "Levítico 22–23", "Levítico 24–25", "Levítico 26–27", "Números 1–2", "Números 3–4", "Números 5–6", "Números 7", "Números 8–10", "Números 11–13", "Números 14", "Números 15–17", "Números 18–21", "Números 22–24", "Números 25–26", "Números 27–29", "Números 30–31", "Números 32–33", "Números 34–36", "Deuteronômio 1–2", "Deuteronômio 3–4"],
+            "Março": ["Deuteronômio 5–7", "Deuteronômio 8–10", "Deuteronômio 11–13", "Deuteronômio 14–17", "Deuteronômio 18–20", "Deuteronômio 21–23", "Deuteronômio 24–26", "Deuteronômio 27–28", "Deuteronômio 29–31", "Deuteronômio 32–34", "Josué 1", "Josué 5–7", "Josué 8–9", "Josué 10–11", "Josué 12–14", "Josué 15–17", "Josué 18–20", "Josué 21–22", "Josué 23–24", "Juízes 1–3", "Juízes 4–5", "Juízes 6–8", "Juízes 9–10", "Juízes 11–12", "Juízes 13–15", "Juízes 16–18", "Juízes 19–21", "Rute 1–4", "1 Samuel 1–3", "1 Samuel 4–7", "1 Samuel 8–10"],
+            "Abril": ["1 Samuel 11–13", "1 Samuel 14–15", "1 Samuel 16–17", "1 Samuel 18–20", "1 Samuel 21–24", "1 Samuel 25–27", "1 Samuel 28–31", "2 Samuel 1–3", "2 Samuel 4–7", "2 Samuel 8–11", "2 Samuel 12–13", "2 Samuel 14–15", "2 Samuel 16–17", "2 Samuel 18–19", "2 Samuel 20–22", "2 Samuel 23–24", "1 Reis 1", "1 Reis 2–3", "1 Reis 4–6", "1 Reis 7", "1 Reis 8", "1 Reis 9–10", "1 Reis 11–12", "1 Reis 13–14", "1 Reis 15–16", "1 Reis 17–19", "1 Reis 20–22", "2 Reis 1–2", "2 Reis 3–4", "2 Reis 5–7"],
+            "Maio": ["2 Reis 8–9", "2 Reis 10–12", "2 Reis 13–14", "2 Reis 15–16", "2 Reis 17–18", "2 Reis 19–21", "2 Reis 22–25", "1 Crônicas 1–2", "1 Crônicas 3–4", "1 Crônicas 5–6", "1 Crônicas 7–9", "1 Crônicas 10–12", "1 Crônicas 13–16", "1 Crônicas 17–19", "1 Crônicas 20–23", "1 Crônicas 24–26", "1 Crônicas 27–29", "2 Crônicas 1–4", "2 Crônicas 5–7", "2 Crônicas 8–10", "2 Crônicas 11–14", "2 Crônicas 15–18", "2 Crônicas 19–22", "2 Crônicas 23–25", "2 Crônicas 26–28", "2 Crônicas 29–30", "2 Crônicas 31–33", "2 Crônicas 34–36", "Esdras 1–2", "Esdras 3–5", "Esdras 6–8"],
+            "Junho": ["Esdras 9–10", "Neemias 1–3", "Neemias 4–6", "Neemias 7–8", "Neemias 9–10", "Neemias 11–13", "Ester 1–3", "Ester 4–7", "Ester 8–10", "Jó 1–5", "Jó 6–10", "Jó 11–15", "Jó 16–21", "Jó 22–28", "Jó 29–33", "Jó 34–37", "Jó 38–42", "Salmos 1–9", "Salmos 10–17", "Salmos 18–22", "Salmos 23–31", "Salmos 32–37", "Salmos 38–44", "Salmos 45–51", "Salmos 52–59", "Salmos 60–67", "Salmos 68–71", "Salmos 72–77", "Salmos 78–81", "Salmos 82–89"],
+            "Julho": ["Salmos 90–91", "Salmos 98–104", "Salmos 105–107", "Salmos 108–116", "Salmos 117–119:72", "Salmos 119:73–176", "Salmos 120–134", "Salmos 135–142", "Salmos 143–150", "Provérbios 1–4", "Provérbios 5–8", "Provérbios 9–13", "Provérbios 14–17", "Provérbios 18–21", "Provérbios 22–24", "Provérbios 25–28", "Provérbios 29–31", "Eclesiastes 1–6", "Eclesiastes 7–12", "Cantares 1–8", "Isaías 1–4", "Isaías 5–8", "Isaías 9–12", "Isaías 13–16", "Isaías 17–21", "Isaías 22–25", "Isaías 26–28", "Isaías 29–31", "Isaías 32–35", "Isaías 36–39", "Isaías 40–42"],
+            "Agosto": ["Isaías 43–47", "Isaías 48–51", "Isaías 52–56", "Isaías 57–59", "Isaías 60–63", "Isaías 64–66", "Jeremias 1–3", "Jeremias 4–6", "Jeremias 7–9", "Jeremias 10–12", "Jeremias 13–15", "Jeremias 16–18", "Jeremias 19–22", "Jeremias 23–25", "Jeremias 26–28", "Jeremias 29–30", "Jeremias 31–32", "Jeremias 33–35", "Jeremias 36–38", "Jeremias 39–41", "Jeremias 42–44", "Jeremias 45–48", "Jeremias 49–50", "Jeremias 51–52", "Lamentações 1–2", "Lamentações 3–5", "Ezequiel 1–4", "Ezequiel 5–8", "Ezequiel 9–12", "Ezequiel 13–15", "Ezequiel 16"],
+            "Setembro": ["Ezequiel 17–19", "Ezequiel 20–21", "Ezequiel 22–23", "Ezequiel 24–26", "Ezequiel 27–28", "Ezequiel 29–31", "Ezequiel 32–33", "Ezequiel 34–36", "Ezequiel 37–38", "Ezequiel 39–40", "Ezequiel 41–43", "Ezequiel 44–45", "Ezequiel 46–48", "Daniel 1–2", "Daniel 3–4", "Daniel 5–6", "Daniel 7–8", "Daniel 9–10", "Daniel 11–12", "Oseias 1–6", "Oseias 7–12", "Oseias 13–14; Joel 1–3", "Amós 1–5", "Amós 6–9; Obadias 1", "Jonas 1–4", "Miqueias 1–7", "Naum 1–3; Habacuque 1–3", "Sofonias 1–3; Ageu 1–2", "Zacarias 1–6", "Zacarias 7–10"],
+            "Outubro": ["Zacarias 11–14", "Malaquias 1–4", "Mateus 1–4", "Mateus 5–7", "Mateus 8–9", "Mateus 10–12", "Mateus 13–14", "Mateus 15–17", "Mateus 18–20", "Mateus 21–22", "Mateus 23–24", "Mateus 25–26", "Mateus 27–28", "Marcos 1–3", "Marcos 4–5", "Marcos 6–7", "Marcos 8–9", "Marcos 10–11", "Marcos 12–13", "Marcos 14–16", "Lucas 1", "Lucas 2–3", "Lucas 4–5", "Lucas 6–7", "Lucas 8", "Lucas 9", "Lucas 10–11", "Lucas 12–13", "Lucas 14–16", "Lucas 17–18", "Lucas 19–20"],
+            "Novembro": ["Lucas 21–22", "Lucas 23–24", "João 1–3", "João 4–5", "João 6–7", "João 8–9", "João 10–11", "João 12–13", "João 14–16", "João 17–18", "João 19–21", "Atos 1–4", "Atos 5–7", "Atos 8–9", "Atos 10–11", "Atos 12–13", "Atos 14–15", "Atos 16–18", "Atos 19–20", "Atos 21–23", "Atos 24–26", "Atos 27–28", "Romanos 1–3", "Romanos 4–7", "Romanos 8–11", "Romanos 12–14", "Romanos 15–16", "1 Coríntios 1–4", "1 Coríntios 5–8", "1 Coríntios 9–11"],
+            "Dezembro": ["1 Coríntios 12–14", "1 Coríntios 15–16", "2 Coríntios 1–3", "2 Coríntios 4–7", "2 Coríntios 8–13", "Gálatas 1–6", "Efésios 1–3", "Efésios 4–6", "Filipenses 1–4", "Colossenses 1–4", "1 Tessalonicenses 1–5", "2 Tessalonicenses 1–3", "1 Timóteo 1–4", "1 Timóteo 5–6", "2 Timóteo 1–4", "Tito; Filemom", "Hebreus 1–4", "Hebreus 5–9", "Hebreus 10–11", "Hebreus 12–13", "Tiago 1–5", "1 Pedro 1–5", "2 Pedro 1–3", "1 João 1–5", "2 João; 3 João; Judas", "Apocalipse 1–5", "Apocalipse 6–9", "Apocalipse 10–12", "Apocalipse 13–16", "Apocalipse 17–19", "Apocalipse 20–22"]
+        };
+
+        const container = document.getElementById('calendario');
+
+        // FUNÇÃO PARA GERAR AS TABELAS AUTOMATICAMENTE
+        function gerarTabelas() {
+            for (const mes in dadosCronograma) {
+                let htmlMes = `
+                    <section class="mes-coluna">
+                        <h2>${mes}</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Passagem</th>
+                                    <th>Lido</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+
+                dadosCronograma[mes].forEach((leitura, index) => {
+                    const diaId = `${mes}-${index + 1}`; // ID Único como "Janeiro-1"
+                    htmlMes += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${leitura}</td>
+                            <td><input type="checkbox" id="${diaId}" onchange="salvar(this.id, this.checked)"></td>
+                        </tr>`;
+                });
+
+                htmlMes += `</tbody></table></section>`;
+                container.innerHTML += htmlMes;
+            }
+            carregarProgresso(); // Carrega o que foi salvo após criar os elementos
+        }
+
+        // LÓGICA PARA SALVAR NO NAVEGADOR (LocalStorage)
+        function salvar(id, valor) {
+            localStorage.setItem(id, valor);
+        }
+
+        function carregarProgresso() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const estadoSalvo = localStorage.getItem(cb.id);
+                if (estadoSalvo === 'true') {
+                    cb.checked = true;
+                }
+            });
+        }
+
+        // INICIALIZAÇÃO
+        gerarTabelas();
+    </script>
 </body>
 </html>
 
